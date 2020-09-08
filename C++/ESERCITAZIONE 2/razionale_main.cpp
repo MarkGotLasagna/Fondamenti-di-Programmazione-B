@@ -1,0 +1,74 @@
+  
+#include <iostream>
+using namespace std;  
+
+/* memorizzare la classe Razionale in un file con nome esercizio_2.cpp
+posto nella stessa cartella in cui è presente il file di questo programma.
+La direttiva di preproccising #include "esercizio_2.cpp" si occuperà
+di caricare tutto il contenuto del file esattamente nel punto  in cui si trova
+la direttiva stessa. */
+
+#include "esercizio_2.cpp"
+
+int main() {
+  
+    Razionale a;
+    Razionale b(4,6);
+    Razionale c(4);
+    Razionale d(9,3);  
+	  
+    cout << "razionale a: " << a << endl;   // 0
+    cout << "razionale b: " << b << endl;   // 2/3
+    cout << "razionale c: " << c << endl;   // 4
+    cout << "razionale d: " << d << endl;   // 3
+    
+    a = b + c;
+    cout << "razionale b+c: " << a << endl;  // 14/3
+    a = b * 3;
+    cout << "razionale b*3: " << a << endl;  // 2
+    a = Razionale(2) * 5;
+    cout << "razionale 2*5: " << a << endl;  // 10
+    a = b + Razionale(1,3);
+    cout << "razionale b+1/3: " << a << endl;  // 1
+   
+    if(b < 2) cout << "minore" << endl;
+	else cout << "maggiore" << endl;
+	
+	Razionale x,y;
+	cout << "Dai una frazione o un intero: ";  
+	cin >> x;
+	cout << "Numero letto: " << x << endl;
+	cout << "Dai una frazione o un intero: ";
+	cin >> y;
+	cout << "Numero letto: " << y << endl;
+	cout << "somma di x e y: " << x + y << endl;
+	Razionale z;
+	cout << "Dai una frazione o un intero: ";  
+	cin >> z;
+	cout << "Numero letto: " << z << endl;
+	
+//    system("pause");
+    return 0;
+}
+
+/* traccia esecuzione
+
+razionale a: 0
+razionale b: 2/3
+razionale c: 4
+razionale d: 3
+razionale b+c: 14/3
+razionale b*3: 2
+razionale 2*5: 10
+razionale b+1/3: 1
+minore
+Dai una frazione o un intero: 2/3
+Numero letto: 2/3
+Dai una frazione o un intero: 3
+Numero letto: 3
+somma di x e y: 11/3
+Dai una frazione o un intero: 5/0
+ATTENZIONE!: denominatore nullo
+Numero letto: 5
+
+*/
